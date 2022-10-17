@@ -5,6 +5,9 @@ echo "I'll scan the license available at [$WORKSPACE] and have mounted at [$CODE
 sleep  $SLEEP_DURATION
 
 cd  $WORKSPACE/${CODEBASE_DIR}
+
+cp /tmp/dependency_decisions.yml doc/dependency_decisions.yml
+
 license_finder action_items
 
 if [ $? -eq 0 ]
