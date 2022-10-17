@@ -22,7 +22,7 @@ if [ $? -eq 0 ]
 then
   logInfoMessage "Congratulations all licenses complied!!!"
   generateOutput mvn_execute true "Congratulations all licenses complied!!!"
-if [ $VALIDATION_FAILURE_ACTION == "FAILURE" ]
+elif [ $VALIDATION_FAILURE_ACTION == "FAILURE" ]
   then
     logErrorMessage "Please check some libraries have non-compliant licences!!!"
     generateOutput mvn_execute false "Please check some libraries have non-compliant licences!!!!!"
