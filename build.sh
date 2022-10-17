@@ -4,12 +4,13 @@ source functions.sh
 echo "I'll scan the license available at [$WORKSPACE] and have mounted at [$CODEBASE_DIR]"
 sleep  $SLEEP_DURATION
 
+echo "I've recieved below arguments $@
 cd  $WORKSPACE/${CODEBASE_DIR}
 
 mkdir doc
 cp /tmp/dependency_decisions.yml doc/dependency_decisions.yml
 
-license_finder action_items
+bash -lc "license_finder"
 
 if [ $? -eq 0 ]
 then
