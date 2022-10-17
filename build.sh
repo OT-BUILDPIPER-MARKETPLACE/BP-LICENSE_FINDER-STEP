@@ -20,13 +20,15 @@ bash -lc "license_finder"
 
 if [ $? -eq 0 ]
 then
-  logInfoMessage "Congratulations all licencses complied!!!"
-  generateOutput mvn_execute true "Congratulations build succeeded!!!"
-  echo "build sucessfull"
-elif  [ $? != 0 ]
-then 
-  logErrorMessage "Please check some libraries have non-complian licences!!!"
-  generateOutput mvn_execute false "Build failed please check!!!!!"
-  echo "build unsucessfull"
-  exit 1
+  logInfoMessage "Congratulations all licenses complied!!!"
+  generateOutput mvn_execute true "Congratulations all licenses complied!!!"
+if [ $VALIDATION_FAILURE_ACTION == "FAILURE" ]
+  then
+    logErrorMessage "Please check some libraries have non-compliant licences!!!"
+    generateOutput mvn_execute false "Please check some libraries have non-compliant licences!!!!!"
+    echo "build unsucessfull"
+    exit 1
+   else
+    logWarningMessage "Please check some libraries have non-compliant licences!!!"
+    generateOutput mvn_execute true "Please check some libraries have non-compliant licences!!!!!"
 fi

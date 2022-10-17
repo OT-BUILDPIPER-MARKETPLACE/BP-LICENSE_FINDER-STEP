@@ -7,4 +7,5 @@ COPY default_dependency_decisions.yml /tmp/dependency_decisions.yml
 
 ENV ACTIVITY_SUB_TASK_CODE BP-LICENSE_FINDER
 ENV SLEEP_DURATION 5s
+ENV VALIDATION_FAILURE_ACTION WARNING
 ENTRYPOINT [ "./build.sh" ]
