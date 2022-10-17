@@ -1,6 +1,6 @@
 FROM licensefinder/license_finder
 
-RUN RUN apt-get -y update && apt-get install -y jq
+RUN apt-get -y update && apt-get install -y jq
 COPY build.sh .
 COPY BP-BASE-SHELL-STEPS/functions.sh .
 COPY default_dependency_decisions.yml /tmp/dependency_decisions.yml
