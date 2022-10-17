@@ -7,8 +7,14 @@ sleep  $SLEEP_DURATION
 logInfoMessage "I've recieved below arguments $@"
 cd  $WORKSPACE/${CODEBASE_DIR}
 
-mkdir doc
-cp /tmp/dependency_decisions.yml doc/dependency_decisions.yml
+if [ -f doc/dependency_decisions.yml ]; then
+  logInfoMessage "License finder dependency decision file already exists in the repo we will be using that."
+  cat doc/dependency_decisions.yml
+else
+  logInfoMessage  "License finder dependency decision file doesn't exists in the repo we will be leveraging default dependency decision file."
+  mkdir doc
+  cp /tmp/dependency_decisions.yml doc/dependency_decisions.yml
+fi
 
 bash -lc "license_finder"
 
