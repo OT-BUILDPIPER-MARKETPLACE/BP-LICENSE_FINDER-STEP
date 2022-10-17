@@ -4,7 +4,7 @@ source functions.sh
 echo "I'll scan the license available at [$WORKSPACE] and have mounted at [$CODEBASE_DIR]"
 sleep  $SLEEP_DURATION
 
-echo "I've recieved below arguments $@
+echo "I've recieved below arguments $@"
 cd  $WORKSPACE/${CODEBASE_DIR}
 
 mkdir doc
