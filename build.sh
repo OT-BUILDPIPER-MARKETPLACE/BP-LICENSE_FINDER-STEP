@@ -6,6 +6,7 @@ sleep  $SLEEP_DURATION
 
 cd  $WORKSPACE/${CODEBASE_DIR}
 
+mkdir doc
 cp /tmp/dependency_decisions.yml doc/dependency_decisions.yml
 
 license_finder action_items
