@@ -33,11 +33,11 @@ docker run -it -v $PWD:/src -e WORKSPACE=/ -e CODEBASE_DIR=src ot/license_finder
 
    * Now entry the `Step Name` and `Step Code`.
    
-   * Select the `Step Category`
+   * Select the `Step Category`.
 
    <img src=./snapshots/3.png>
 
-   * Select the `Step Type` 
+   * Select the `Step Type`.
 
    <img src=./snapshots/4.png>
 
