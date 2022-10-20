@@ -20,7 +20,39 @@ docker run -it -v $PWD:/src -e WORKSPACE=/ -e CODEBASE_DIR=src ot/license_finder
 ```
 * Register License Finder Step in BP
 * Update your job template to leverage the BP step
+   
+   * First of all, login to your Buildpiper server.
+   
+   * Click on the `Step Catalogs` option.
 
+   <img src=./snapshots/1.png>
+
+   * Then click on the `New Step` option.
+
+   <img src=./snapshots/2.png>
+
+   * Now entry the `Step Name` and `Step Code`.
+   
+   * Select the `Step Category`
+
+   <img src=./snapshots/3.png>
+
+   * Select the `Step Type` 
+
+   <img src=./snapshots/4.png>
+
+   * Add the `Add Mount Details` and select the `Mount Name` from the drop down.
+
+   <img src=./snapshots/5.png>
+
+   * Now select the `Env. build data path` and add the `Environment Variable`.
+
+   <img src=./snapshots/6.png>
+
+   * After providing all the requried fields now click on the `Save` option
+
+   * And save the `Step`.
+   
 ## Additional Info
 * License Finder Step comes with a global list of approvate licences available at [Whitelisted Licenses](./default_dependency_decisions.yml)
   * MIT
