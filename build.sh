@@ -1,9 +1,10 @@
 #!/bin/bash
-source aws-functions.sh
-source file-functions.sh
-source functions.sh
-source log-functions.sh
-source str-functions.sh
+
+source /opt/buildpiper/shell-functions/functions.sh
+source /opt/buildpiper/shell-functions/log-functions.sh
+source /opt/buildpiper/shell-functions/str-functions.sh
+source /opt/buildpiper/shell-functions/file-functions.sh
+source /opt/buildpiper/shell-functions/aws-functions.sh
 
 if test -f requirements.txt; then
   if test ${PYTHON_VERSION:-3} = "3"; then
@@ -37,7 +38,7 @@ elif [ $VALIDATION_FAILURE_ACTION == "FAILURE" ]
   then
     logErrorMessage "Please check some libraries have non-compliant licences!!!"
     generateOutput mvn_execute false "Please check some libraries have non-compliant licences!!!!!"
-    echo "build unsucessfull"
+    logErrorMessage "build unsucessfull"
     exit 1
    else
     logWarningMessage "Please check some libraries have non-compliant licences!!!"
