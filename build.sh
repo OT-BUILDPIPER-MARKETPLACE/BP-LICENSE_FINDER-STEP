@@ -1,9 +1,16 @@
 #!/bin/bash
-source aws-functions.sh  
-source file-functions.sh  
-source functions.sh  
-source log-functions.sh  
+source aws-functions.sh
+source file-functions.sh
+source functions.sh
+source log-functions.sh
 source str-functions.sh
+
+if test -f requirements.txt; then
+  if test ${PYTHON_VERSION:-3} = "3"; then
+    ln -sf $(which python3) $(which python)
+    ln -sf $(which pip3) $(which pip)
+  fi
+fi
 
 logInfoMessage "I'll scan the license available at [$WORKSPACE] and have mounted at [$CODEBASE_DIR]"
 sleep  $SLEEP_DURATION
