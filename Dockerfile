@@ -1,6 +1,5 @@
 FROM licensefinder/license_finder
 
-USER root
 
 RUN curl -L -o /usr/local/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && \
     chmod +x /usr/local/bin/jq
