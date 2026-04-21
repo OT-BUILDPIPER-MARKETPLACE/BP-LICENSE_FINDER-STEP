@@ -51,7 +51,7 @@ fi
 
 # 4. Execution Phase
 logInfoMessage "Executing license_finder..."
-bash -lc "license_finder"
+license_finder
 
 # 5. Validation and Result Phase
 if [ $? -eq 0 ]
