@@ -8,14 +8,18 @@ RUN groupadd -g 65522 buildpiper && \
     useradd -u 65522 -g buildpiper -m -d /home/buildpiper buildpiper
 
 RUN mkdir -p /home/buildpiper/reports \
-             /bp/data \
-             /bp/execution_dir \
-             /opt/buildpiper/shell-functions \
-             /bp/workspace && \
+    /bp/data \
+    /bp/execution_dir \
+    /opt/buildpiper/shell-functions \
+    /bp/workspace && \
     chown -R buildpiper:buildpiper /home/buildpiper /bp /opt
 
 COPY --chown=buildpiper:buildpiper build.sh /home/buildpiper/build.sh
 COPY --chown=buildpiper:buildpiper BP-BASE-SHELL-STEPS/functions.sh /opt/buildpiper/shell-functions/
+COPY --chown=buildpiper:buildpiper BP-BASE-SHELL-STEPS/str-functions.sh /opt/buildpiper/shell-functions/
+COPY --chown=buildpiper:buildpiper BP-BASE-SHELL-STEPS/log-functions.sh /opt/buildpiper/shell-functions/
+COPY --chown=buildpiper:buildpiper BP-BASE-SHELL-STEPS/file-functions.sh /opt/buildpiper/shell-functions/
+COPY --chown=buildpiper:buildpiper BP-BASE-SHELL-STEPS/aws-functions.sh /opt/buildpiper/shell-functions/
 
 COPY default_dependency_decisions.yml /tmp/dependency_decisions.yml
 
