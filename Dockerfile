@@ -28,6 +28,7 @@ RUN chmod +x /home/buildpiper/build.sh
 ENV ACTIVITY_SUB_TASK_CODE=BP-LICENSE_FINDER
 ENV SLEEP_DURATION=5s
 ENV VALIDATION_FAILURE_ACTION=WARNING
+ENV PATH=/usr/local/bundle/bin:$PATH
 
 USER buildpiper
 WORKDIR /home/buildpiper
