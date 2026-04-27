@@ -21,8 +21,8 @@ fi
 
 # 2. Initialization Phase
 logInfoMessage "Initiating License Scanner in workspace: [$WORKSPACE], codebase directory: [$CODEBASE_DIR]"
-add_event "LICENSE SCAN INITIATED" "InProgress" \
-          "Starting license scan operations" \
+add_event "LICENSE SCAN INITIATED" "Successful" \
+          "License scan started" \
           "Target Directory: $WORKSPACE/$CODEBASE_DIR"
 
 sleep $SLEEP_DURATION
@@ -77,9 +77,10 @@ then
 else
   logWarningMessage "License compliance check finished with warnings: Non-compliant libraries detected, but build is configured to proceed."
   
-  add_event "LICENSE SCAN COMPLETE" "Warning" \
+  add_event "LICENSE SCAN COMPLETE" "Successful" \
             "Non-compliant licenses found in dependencies" \
             "Action: PROCEEDING (Warning Mode)"
+
             
   generateOutput mvn_execute true "Please check some libraries have non-compliant licences!!!!!"
 fi
